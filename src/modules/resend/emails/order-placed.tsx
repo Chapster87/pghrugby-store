@@ -147,6 +147,21 @@ function OrderPlacedEmailComponent({
                     <Text className="text-gray-800 mt-2 font-bold">
                       {formatPrice(item.total)}
                     </Text>
+                    {item.metadata && Object.keys(item.metadata).length > 0 && (
+                      <ul className="list-disc pl-5">
+                        {Object.keys(item.metadata).map((key) => {
+                          const metaValue = item.metadata?.[key] as
+                            | { displayName?: string; value?: any }
+                            | undefined;
+                          return (
+                            <li key={key} className="mb-1">
+                              <strong>{metaValue?.displayName}:</strong>{" "}
+                              {metaValue?.value}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
                   </Column>
                 </Row>
               </Section>
