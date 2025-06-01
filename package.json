@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "build": "medusa build",
+    "predeploy": "medusa db:migrate",
     "seed": "medusa exec ./src/scripts/seed.ts",
     "start": "medusa start",
     "dev": "medusa develop",
@@ -25,6 +26,7 @@
   "dependencies": {
     "@medusajs/admin-sdk": "2.8.3",
     "@medusajs/cli": "2.8.3",
+    "@medusajs/dashboard": "2.8.3",
     "@medusajs/framework": "2.8.3",
     "@medusajs/medusa": "2.8.3",
     "@mikro-orm/core": "6.4.3",
